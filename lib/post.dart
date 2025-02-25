@@ -69,70 +69,155 @@ class Post extends StatelessWidget {
         ),
         Image.asset("assets/images/goat.jpg"),
         //stats(likes,comment,share)
-        Row(
-          children: [
-            //like
-            Icon(Icons.favorite_border_outlined),
-            Text(
-              "5.4M",
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  //like
+                  Icon(Icons.favorite_border_outlined),
+                  Text(
+                    "5.4M",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
 
-            const SizedBox(
-              width: 2,
-            ),
+                  const SizedBox(
+                    width: 2,
+                  ),
 
-            //comments
-            Image.asset("assets/icons/comment.png", height: 50, width: 50),
-            const Text(
-              "36.9k",
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(
-              width: 2,
-            ),
+                  //comments
+                  Image.asset("assets/icons/comment.png",
+                      height: 50, width: 50),
+                  const Text(
+                    "36.9k",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                  const SizedBox(
+                    width: 2,
+                  ),
 
-            Image.asset("assets/icons/share.png", height: 50, width: 50),
-            const Text(
-              "19.9k",
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
+                  Image.asset("assets/icons/share.png", height: 50, width: 50),
+                  const Text(
+                    "19.9k",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
 
-            Spacer(),
-            Image.asset(
-              "assets/icons/save.png",
-              height: 50,
-              width: 50,
-            )
-          ],
-        ),
-
-        //caption
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "cristiano",
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w800,
+                  Spacer(),
+                  Image.asset(
+                    "assets/icons/save.png",
+                    height: 50,
+                    width: 50,
+                  )
+                ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3.0),
-              child: Icon(
-                Icons.verified,
-                color: Color.fromARGB(255, 0, 149, 246),
-                size: 14,
+
+              Row(
+                children: [
+                  Image.asset(
+                    "assets/images/image.png",
+                    height: 35,
+                    width: 35,
+                  ),
+                  Text(
+                    "Liked by ",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  Text(
+                    "heis_var1 ",
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
+                  ),
+                  Text(
+                    "and ",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  Text(
+                    "14,657,063 others",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                ],
               ),
-            ),
-            Text(
-              "Thank you all for the amazing birthday wishes!",
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
-          ],
-        ),
-        
+              //caption
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "cristiano",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 3.0),
+                    child: Icon(
+                      Icons.verified,
+                      color: Color.fromARGB(255, 0, 149, 246),
+                      size: 14,
+                    ),
+                  ),
+                  Text(
+                    "Thank you all for the amazing birthday wishes!",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Text(
+                    "View all 146,433 comments",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 119, 119, 119),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Add a comment...",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 119, 119, 119),
+                      fontSize: 14,
+                    ),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.emoji_emotions_outlined,
+                    size: 14,
+                    color: Color.fromARGB(255, 119, 119, 119),
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  Text(
+                    "February 5",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 119, 119, 119),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 8.0,
+                ),
+                child: Container(
+                  width: double.infinity,
+                  height: 0.2,
+                  color: Color.fromARGB(255, 119, 119, 119),
+                ),
+              ),
+            ],
+          ),
+        )
       ],
     );
   }
