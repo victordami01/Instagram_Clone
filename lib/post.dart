@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Post extends StatelessWidget {
-  const Post({super.key});
+  final String imagePath;
+  const Post({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +68,7 @@ class Post extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Image.asset("assets/images/goat.jpg"),
+        Image.asset(imagePath),
         //stats(likes,comment,share)
         Padding(
           padding: const EdgeInsets.all(8.0),

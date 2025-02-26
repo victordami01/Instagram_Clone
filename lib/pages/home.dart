@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/ig_header.dart';
 import 'package:instagram_clone/post.dart';
 import 'package:instagram_clone/story.dart';
-import 'package:instagram_clone/bottom.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -20,23 +19,44 @@ class Home extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                Story(),
-                Story(),
-                Story(),
-                Story(),
-                Story(),
+                Story(
+                  imagePath: "assets/images/shoe.jpg",
+                ),
+                Story(
+                  imagePath: "assets/images/card.jpg",
+                ),
+                Story(
+                  imagePath: "assets/images/card1.jpg",
+                ),
+                Story(
+                  imagePath: "assets/images/perfume.jpg",
+                ),
+                Story(
+                  imagePath: "assets/images/sandwich.jpg",
+                ),
+                Story(
+                  imagePath: "assets/images/perfume.jpg",
+                ),
+                Story(
+                  imagePath: "assets/images/vase.png",
+                ),
               ],
             ),
           ),
 
-          Post(),
-          Post(),
-          Post(),
-          Post(),
-          Post(),
+          // Expanded(
+          //     child: ListView.builder(
+          //   shrinkWrap: true,
+          //   itemCount: 20,
+          //   itemBuilder: (context, index) => const Post(),
+          // ))
+
+          Post(imagePath: "assets/images/shoe.jpg"),
+          Post(imagePath: "assets/images/sandwich.jpg"),
+          Post(imagePath: "assets/images/fry.png"),
+          Post(imagePath: "assets/images/pasta.jpg"),
         ],
       ),
-      bottomNavigationBar: Bot(),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/bottom.dart';
 
 class Explore extends StatelessWidget {
   const Explore({super.key});
@@ -8,7 +7,6 @@ class Explore extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Text("Explore"),
-      bottomNavigationBar: Bot(),
     );
   }
 }

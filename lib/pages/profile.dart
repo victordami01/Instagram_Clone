@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/bottom.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -7,7 +6,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Bot(),
+      body: Text("profile"),
     );
   }
 }

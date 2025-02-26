@@ -6,18 +6,6 @@ class Bot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-        onTap: (value) {
-          // List of routes that we want to navigate to when an item is tapped
-          const routes = [
-            "/home",
-            "/explore",
-            "/addPost",
-            "/reels",
-            "/profile"
-          ];
-          Navigator.pushReplacementNamed(
-              context, routes[value]); // Replace current route
-        },
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
