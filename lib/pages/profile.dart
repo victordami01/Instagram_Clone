@@ -208,7 +208,7 @@ class Profile extends StatelessWidget {
                     foregroundColor: Colors.black,
                     elevation: 0,
                     padding: EdgeInsets.all(12),
-                    shape: RoundedRectangleBorder(
+                    shape : RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),

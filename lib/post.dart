@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
 
-class Post extends StatelessWidget {
+class Post extends StatefulWidget {
   final String imagePath;
   const Post({super.key, required this.imagePath});
+
+  @override
+  State<Post> createState() => _PostState();
+}
+
+class _PostState extends State<Post> with SingleTickerProviderStateMixin {
+  int numOfLikes = 0;
+  bool isLiked = false;
+
+  late AnimationController _controller;
+
+  late Animation<double> opacityVal;
+
+  void initState() {
+    super.initState();
+
+    _controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 3));
+    opacityVal = Tween<double>(begin: 1.0, end: 0.0).animate(_controller);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +88,27 @@ class Post extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Image.asset(imagePath),
+
+        GestureDetector(
+            onDoubleTap: () {
+              setState(() {
+                numOfLikes = 1;
+                isLiked = true;
+                _controller.forward();
+              });
+            },
+            child: Stack(
+              children: [
+                Image.asset(widget.imagePath),
+                isLiked
+                    ? Image.asset(
+                        opacity: opacityVal,
+                        "assets/images/liked.gif",
+                      )
+                    : const SizedBox()
+              ],
+            )),
+
         //stats(likes,comment,share)
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -77,9 +117,33 @@ class Post extends StatelessWidget {
               Row(
                 children: [
                   //like
-                  Icon(Icons.favorite_border_outlined),
+                  isLiked
+                      ? GestureDetector(
+                          onTap: () => {
+                            setState(() {
+                              isLiked = !isLiked;
+                              numOfLikes = 0;
+                            })
+                          },
+                          child: const Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () => {
+                            setState(() {
+                              isLiked = !isLiked;
+                              numOfLikes = 1;
+                            })
+                          },
+                          child: const Icon(
+                            Icons.favorite_border_outlined,
+                          ),
+                        ),
+
                   Text(
-                    "5.4M",
+                    numOfLikes.toString(),
                     style: TextStyle(fontWeight: FontWeight.w500),
                   ),
 

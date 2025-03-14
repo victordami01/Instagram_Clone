@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Story extends StatelessWidget {
   final String imagePath;
 
-  const Story({Key? key, required this.imagePath}) : super(key: key);
+  const Story({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {

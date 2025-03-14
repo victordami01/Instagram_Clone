@@ -19,7 +19,7 @@ class Explore extends StatelessWidget {
     "assets/images/fork.jpg",
   ];
 
-  Explore({Key? key}) : super(key: key);
+  Explore({super.key});
 
   @override
   Widget build(BuildContext context) {
